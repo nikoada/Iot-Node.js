@@ -21,7 +21,7 @@ ipc.serve(() => {
     ipc.log(`Recived: [${asciiToHex(dataString)}] is "${dataString.replace('\n', '\\n')}"`)
     ipc.server.emit(
       socket,
-      String(commandList[dataString])
+      `${commandList[dataString]}`
     )
     ipc.log(
       commandList.hasOwnProperty(dataString) ?
